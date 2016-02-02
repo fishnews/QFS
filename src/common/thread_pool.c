@@ -47,7 +47,7 @@ int create_thread_pool(int num)
 		pool->thread_id = (pthread_t *)malloc(sizeof(pthread_t) * num);
 		for(i=0; i<num; i++)
 		{
-				if(!pthread_create(&pool->thread_id[i], NULL, thread_routine, NULL))
+				if(pthread_create(&pool->thread_id[i], NULL, thread_routine, NULL) != 0)
 				{
 						printf("create thread error\n");
 						exit(1);
