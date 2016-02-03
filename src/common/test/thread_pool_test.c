@@ -14,9 +14,9 @@ void *fun(void *s)
 }
 int main()
 {
-		create_thread_pool(10);
+		create_thread_pool(1000);
 		int i;
-		for(i=0; i<10; i++)
+		for(i=0; i<1000; i++)
 		{
 				add_work_to_pool(fun, NULL);
 		}
